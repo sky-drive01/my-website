@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sky Drive Travel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #fff;
+      color: white;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo a img {
+     width: 30%;
+     height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: rgb(20, 16, 16);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links i {
+      margin-right: 5px;
+    }
+    .hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+    .hero {
+      background: url('hero-section1.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero button {
+      padding: 0.8rem 1.5rem;
+      background-color: #ff9800;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 4rem 2rem;
+    }
+
+    .services, .routes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+   
+
+    .card {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card i {
+      font-size: 2rem;
+      color: #0d47a1;
+      margin-bottom: 1rem;
+    }
+
+    .Gallery{
+           display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .Gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+    }
+
+    
+     .Gallery button{
+        padding: 0.8rem 1.5rem;
+      background-color: #ff9800;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      
+      
+     }
+    .view-more-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .view-more-btn:hover {
+      background-color: #e67e22;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.6);
+    }
+    .contact-container{
+      max-width: 600px;
+     display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .contact-left{
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 20px;
+    }
+
+    .contact-left-title h2{
+      font-weight: 600;
+      color: #a363aa;
+      font-size:40px ;
+      margin-bottom: 5px;
+    }
+
+    .contact-left-title hr{
+      border: none;
+      width: 120px;
+      height: 5px;
+      background-color: #a363aa;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .contact-input{
+      width: 400px;
+      height: 50px;
+      border: none;
+      outline: none;
+      padding-left: 25px;
+      font-weight: 500;
+      color: #666;
+      border-radius:50px ;
+    }
+    .contact-left textarea{
+      height: 140px;
+      padding-top: 15px;
+      border-radius: 20px;
+    }
+
+    .contact-input:focus{
+      border: 2px solid #ff994f ;
+    }
+
+  .contact-inputs::placeholder{
+    color: #a9a9a9;
+  }
+  .contact-left button{
+    display: flex;
+    align-items: center;
+    padding: 15px 30px ;
+    font-size: 16px;
+    color: #fff;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #ff994f, #fa6d86);
+    cursor: pointer;
+  }
+
+    .booking-form {
+      max-width: 600px;
+      margin: auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .booking-form input, .booking-form select {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .booking-form button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #0d47a1;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+  /* Footer Styles */
+
+  :root {
+  --bg-color: linear-gradient(to right, #e0f7fa, #ffffff);
+  --text-color: #2c3e50;
+  --card-bg: #ffffff;
+  --icon-color: #2D9CDB;
+  --accent-color: #27AE60;
+}
+footer {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 50px 20px 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-container > div {
+  flex: 1 1 220px;
+}
+
+.footer-brand h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4 {
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: var(--icon-color);
+}
+
+.footer-contact p,
+.footer-social h4 {
+  margin: 8px 0;
+}
+
+.footer-contact i {
+  margin-right: 8px;
+}
+
+.social-icons a {
+  margin-right: 15px;
+  font-size: 20px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--icon-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 15px;
+}
+
+
+   /* Base styles already defined above remain unchanged */
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .services, .routes, .Gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .contact-left {
+    width: 100%;
+    align-items: center;
+  }
+
+  .contact-input {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .booking-form {
+    width: 90%;
+  }
+}
+ .footer-container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .footer-container > div {
+    flex: 1 1 45%;
+    margin-bottom: 30px;
+  }
+
+@media (max-width: 768px) {
+ .hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 27px;
+    right: 28px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+  }
+}
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .services, .routes, .Gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-left-title h2 {
+    font-size: 32px;
+  }
+
+  .booking-form input,
+  .booking-form select,
+  .booking-form button {
+    font-size: 0.9rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-container > div {
+    flex: 1 1 100%;
+    margin-bottom: 25px;
+  }
+
+  .footer-links ul {
+    padding: 0;
+  }
+
+  .footer-links ul li {
+    margin: 5px 0;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+  }
+
+  .footer-bottom {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .hero button,
+  .view-more-btn,
+  .Gallery button,
+  .contact-left button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+
+  .contact-left-title h2 {
+    font-size: 28px;
+  }
+
+  .booking-form {
+    padding: 1rem;
+  }
+
+  .booking-form input,
+  .booking-form select {
+    font-size: 0.9rem;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+  .footer-brand h3 {
+    font-size: 20px;
+  }
+
+  .footer-links h4,
+  .footer-contact h4,
+  .footer-social h4 {
+    font-size: 18px;
+  }
+
+  .footer-contact p,
+  .footer-links ul li a {
+    font-size: 15px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+  }
+
+  .footer-bottom {
+    padding-top: 10px;
+  }
+
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+  <div class="navbar">
+    <div class="logo"><a href="index.html"><img src="logosky.jpg" alt="Sky Drive Logo"></a></div>
+    
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="nav-links" id="navLinks">
+      <div class="close-btn" onclick="toggleMenu()">&times;</div>
+      <a href="index.html"><i class="fas fa-home"></i>Home</a>
+      <a href="service.html"><i class="fa-solid fa-bus-simple"></i>Services</a>
+      <a href="gallery.html"><i class="fa-solid fa-image"></i>Gallery</a>
+      <a href="#book"><i class="fas fa-ticket-alt"></i>Booking</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i>About Us</a>
+      <a href="#contact"><i class="fas fa-envelope"></i>Contact</a>
+    </div>
+  </div>
+</header>
+
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Travel Smart. Travel Safe.</h1>
+      <p>Reliable bus services across India with comfort and care.</p>
+      <a href="#book"><button>Book Your Ride</button></a>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center; padding-bottom:20px ; font-size: 50px;">Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <i class="fas fa-bus"></i>
+        <h3>School and College Bus</h3>
+        <p>Provides best service and ensure safety of your childres.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-chair"></i>
+        <h3>Luxury Coaches</h3>
+        <p>Comfortable seating and clean buses.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-bus"></i>
+        <h3>Company Buses</h3>
+        <p>We provide long buses for company staff to travel with comfort and assurance.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-laptop"></i>
+        <h3>Online Booking</h3>
+        <p>Send enquiry from any device.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Rent a cab</h3>
+        <p>We provide you are buses to travel anywhere with comfort and assurance.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <h2 style="text-align:center; padding-bottom:20px ; font-size: 50px;">Gallery</h2>
+    <div class="Gallery">
+      <div class="card">
+        <img src="gallery1.jpg" alt="">
+      </div>
+      <div class="card">
+        <img src="gallery2.jpg" alt="">
+      </div>
+      <div class="card">
+        <img src="gallery3.jpg" alt="">
+      </div>
+      <div class="card">
+        <img src="gallery4.jpg" alt="">
+      </div>
+    </div>
+    <a href="gallery.html"><button class="view-more-btn">View More</button></a>
+  </section>
+
+  <section id="route">
+    <h2 style="text-align:center;padding-bottom:20px ; font-size: 50px;">Popular Routes</h2>
+    <div class="routes">
+      <div class="card">
+        <h3>In Delhi</h3>
+        
+        <a href="#book"><button>Book Now</button></a>
+      </div>
+      <div class="card">
+        <h3>In Noida</h3>
+       
+        <a href="#book"><button>Book Now</button></a>
+      </div>
+      <div class="card">
+        <h3>In Ghaziabad</h3>
+        <a href="#book"><button>Book Now</button></a>
+      </div>
+      <div class="card">
+        <h3>In Greater Noida</h3>
+        <a href="#book"><button>Book Now</button></a>
+      </div>
+
+    </div>
+  </section>
+     <section>
+     <h2 style="text-align:center;padding-bottom:20px ; font-size: 50px;">Our Core Clients</h2>
+    <div class="Gallery">
+      <div class="card">
+        <img src="client1.png" alt="">
+        
+      
+      </div>
+      <div class="card">
+        <img src="client2.png" alt=""  style="max-width: 100%; height: auto; ">
+      </div>
+      <div class="card">
+        <img src="client3...jpg" alt="">
+      </div>
+      <div class="card">
+        <img src="client4.webp" alt="">
+      </div>
+
+    </div>
+  
+
+  </section>
+    <section id="contact">
+      <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+          <div class="contact-left-title">
+            <h2>Get in touch</h2>
+            <hr>
+          </div>
+          <input type="hidden" name="access_key" value="5645bd91-aa59-47dd-bf33-8aca8d512324">
+          <input type="text" name="name" placeholder="Your Name" class="contact-input" required>
+          <input type="text" name="email" placeholder="Your Email" class="contact-input" required>
+          <textarea name="message" placeholder="Your Message" class="contact-input" required></textarea>
+          <button type="submit">Submit </button>
+        </form>
+      </div>
+    </section>
+  <section id="book">
+    <h2 style="text-align:center;padding-bottom:20px ; font-size: 50px;">Book Your Ride</h2>
+    <form  action="https://api.web3forms.com/submit" method="POST" class="booking-form" >
+      <input type="hidden" name="access_key" value="5645bd91-aa59-47dd-bf33-8aca8d512324">
+      <input type="text" name="departure" placeholder="Departure City" required />
+      <input type="text" name="destination" placeholder="Destination City" required />
+      <input type="date" name="date" required />
+      <select name="passengers" required>
+        <option value="">Passengers</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3+">3+</option>
+      </select>
+
+      <input type="hidden" name="_subject" value="New Ride Booking!" />
+      <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}" maxlength="10" />
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+
+
+ <footer>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>Sky Drive Travel</h3>
+      <p>Reliable, safe, and comfortable travel solutions for schools, colleges, and luxury tours.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="#book">Booking</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-phone-alt"></i> +91 9811502670</p>
+      <p><i class="fas fa-envelope"></i> skydrivetravels01gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Noida, Uttar Pradesh, India</p>
+    </div>
+
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/skydrive_travels01?igsh=YWx3YmJyYzdyOGVn"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Sky Drive Travel. All rights reserved.</p>
+  </div>
+</footer>
+
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>

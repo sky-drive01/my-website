@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <style>
+    :root {
+      --text-color: #2c3e50;
+      --overlay-bg: rgba(0, 0, 0, 0.5);
+      --accent-color: #27ae60;
+      --bg-color: linear-gradient(to right, #e0f7fa, #ffffff);
+  
+  --card-bg: #ffffff;
+  --icon-color: #2D9CDB;
+  --accent-color: #27AE60;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-color);
+      background-color: #f9f9f9;
+    }
+
+    h2 {
+      text-align: center;
+      padding: 30px 20px 10px;
+      font-size: 50px;
+      color: var(--accent-color);
+    }
+
+    .about-container {
+      position: relative;
+      background-image: url("hero-section1.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-container h1 {
+      color: white;
+      font-size: 48px;
+      text-align: center;
+      background-color: var(--overlay-bg);
+      padding: 20px 40px;
+      border-radius: 10px;
+      max-width: 90%;
+    }
+
+    .para {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .para h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: var(--accent-color);
+    }
+
+    .para p {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+
+     /*footer */
+
+          :root {
+  --bg-color: linear-gradient(to right, #e0f7fa, #ffffff);
+  --text-color: #2c3e50;
+  --card-bg: #ffffff;
+  --icon-color: #2D9CDB;
+  --accent-color: #27AE60;
+}
+        footer {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 50px 20px 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-container > div {
+  flex: 1 1 220px;
+}
+
+.footer-brand h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4 {
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: var(--icon-color);
+}
+
+.footer-contact p,
+.footer-social h4 {
+  margin: 8px 0;
+}
+
+.footer-contact i {
+  margin-right: 8px;
+}
+
+.social-icons a {
+  margin-right: 15px;
+  font-size: 20px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--icon-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 15px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+
+ 
+
+
+
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .footer-container > div {
+    flex: 1 1 45%;
+    margin-bottom: 30px;
+  }
+}
+
+
+
+
+
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 36px;
+      }
+
+      .about-container h1 {
+        font-size: 32px;
+        padding: 15px 25px;
+      }
+
+      .para h3 {
+        font-size: 24px;
+      }
+
+      .para p {
+        font-size: 16px;
+      }
+
+       .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-container > div {
+    flex: 1 1 100%;
+    margin-bottom: 25px;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+  }
+
+  .footer-bottom {
+    font-size: 13px;
+  }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 28px;
+      }
+
+      .about-container {
+        height: 40vh;
+      }
+
+      .about-container h1 {
+        font-size: 24px;
+        padding: 10px 20px;
+      }
+
+      .para h3 {
+        font-size: 20px;
+      }
+
+      .para p {
+        font-size: 15px;
+      }
+
+
+      .footer-brand h3 {
+    font-size: 20px;
+  }
+
+  .footer-links h4,
+  .footer-contact h4,
+  .footer-social h4 {
+    font-size: 18px;
+  }
+
+  .footer-contact p,
+  .footer-links ul li a {
+    font-size: 15px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+  }
+
+  .footer-bottom {
+    padding-top: 10px;
+  }
+    }
+
+  </style>
+</head>
+<body>
+
+  <section>
+    <h2 style="color: rgb(54, 90, 26);">About Us</h2>
+
+    <div class="about-container">
+      <h1>Millions of Miles with Smile</h1>
+    </div>
+
+    <div class="para">
+      <h3 style="color: #e62828;">SKY DRIVE TRAVELS</h3>
+      <p>
+        Welcome to <strong>Sky Drive Travels</strong>, your trusted partner in safe, comfortable, and reliable transportation. Founded by <strong>Mr. Kamal Singh</strong>, we are proudly based in <strong>A-30, Sector 69, Noida</strong>, and have been serving schools, colleges, corporate groups, and luxury tour clients with dedication and care.<br><br>
+
+        At Sky Drive Travels, we believe that every journey should be smooth, secure, and memorable. Our fleet of well-maintained buses and experienced drivers ensure that you reach your destination on time and in style. Whether it’s a daily school route or a weekend getaway, we tailor our services to meet your needs.<br><br>
+
+        We also operate under the name <strong>Angand Bus Service</strong>, expanding our reach and capabilities to serve a wider range of clients across Delhi NCR and beyond. With both firms working in harmony, we’re able to offer flexible solutions for group travel, event transportation, and long-distance tours.
+      </p>
+      
+    </div>
+    <hr style="width: 100%; height: 20px; background-color: rgb(247, 84, 147);">
+  </section>
+<footer>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>Sky Drive Travel</h3>
+      <p>Reliable, safe, and comfortable travel solutions for schools, colleges, and luxury tours.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="#book">Booking</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-phone-alt"></i> +91 9811502670</p>
+      <p><i class="fas fa-envelope"></i> skydrivetravels01@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Noida, Uttar Pradesh, India</p>
+    </div>
+
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#https://www.instagram.com/skydrive_travels01?igsh=YWx3YmJyYzdyOGVn"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Sky Drive Travel. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
